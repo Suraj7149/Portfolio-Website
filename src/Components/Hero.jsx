@@ -9,10 +9,13 @@ const Hero = () => {
             <nav className='navbar'>
                 <a href="">label</a>
                 <ul>
-                    <li>Home</li>
-                    <li>About</li>
-                    <li>Service</li>
-                    <li>Work</li>
+                    <li className='item active'>
+                        <div className='circle'></div>
+                        Home
+                    </li>
+                    <li className='item'><div className='circle'></div>About</li>
+                    <li className='item'><div className='circle'></div>Service</li>
+                    <li className='item'><div className='circle'></div>Work</li>
                 </ul>
             </nav>
             

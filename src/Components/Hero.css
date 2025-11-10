@@ -2,7 +2,7 @@
   --primary-bg-color: white;
   --secondary-bg-color: orange;
   --terirary-bg-color: black;
-  --navbar-bg-color: #F3F3F3;
+  --navbar-bg-color: #D9D9D9;
 }
 .hero{
   height: 100vh;
@@ -18,33 +18,32 @@
     position: relative;
 }
 .navbar{
-    position: absolute;
-    top: 5%;
-    left: 9%;
-    height: 40px;
-    width: 550px;
+    margin: 5% 0 0 0;
+    height: 10%;
+    width: 100%;
     display: flex;
     flex-direction: row;
     text-align: center;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     
 }
 .navbar a{
     text-decoration: none;
-    width: 107px;
+    width: 15%;
     background-color: var(--secondary-bg-color);
-    height: 40px;
+    height: 60%;
     border-radius: 110px;
     display: flex;
     align-items: center;   
     justify-content: center;
+    margin-left: -4%;
     
 }
 
 .navbar ul{
-    width: 380px;
-    height: 40px;
+    width: 60%;
+    height: 60%;
     margin: 0;
     padding: 0;
     list-style-type: none;
@@ -54,24 +53,51 @@
     gap: 10px;
     background-color: var(--navbar-bg-color);
     border-radius: 110px;
-    margin-left: 10px;
+    margin-left: 5%;
+    
     
 }
-.navbar ul li{
-    width: 80px;
-}
-.navbar ul li:hover{
-    list-style-type: disc;
-    background-color: var(--primary-bg-color);
-    height: 35px;
-    width: 84px;
+.item{
+    width: 22.5%;
+    height: 90%;
     border-radius: 110px;
+    font-weight: 400;
+    font-size: 20px;
     display: flex;
+    text-align: center;
     align-items: center;
     justify-content: center;
-    animation-duration: 1s;
-    
+    gap: 10%;
+    cursor: pointer;
 }
+
+.active .circle{
+    position: relative;
+    height: 42%;
+    width: 18%;
+    border-radius: 50%;
+    
+    border: 3px solid var(--secondary-bg-color);
+    position: relative;
+}
+
+.active .circle::after {
+  content: "";
+  width: 67%;
+  height: 67%;
+  background: var(--secondary-bg-color);
+  border-radius: 50%;
+  position: absolute;
+  top: 45%;
+  left: 49%;
+  transform: translate(-50%, -50%);
+}
+
+
+.active{
+    background-color: var(--primary-bg-color);
+}
+
 
 .video{
     height: 100%;
@@ -92,12 +118,12 @@
 
 .contact_us{
     position: absolute;
-    top: 5%;
-    right: 10%;
-    height: 40px;
-    width: 130px;
+    top: 6%;
+    right: 8%;
+    height: 6%;
+    width: 132px;
     border-radius: 110px;
     border: none;
     font-weight: 400;
-    font-size: 16px;
+    font-size: clamp(16px, 1vw, 20px);
 }
