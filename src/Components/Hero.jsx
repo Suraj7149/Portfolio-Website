@@ -1,6 +1,6 @@
 import React from 'react'
 import './Hero.css'
-import arrow from './assets/arrow_with_circle.png';
+import arrow from '../assets/arrow_with_circle.png';
 
 const Hero = () => {
   return (
