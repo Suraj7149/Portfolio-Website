@@ -1,5 +1,6 @@
 import React from 'react'
 import './Hero.css'
+import arrow from './assets/arrow_with_circle.png';
 
 const Hero = () => {
   return (
@@ -34,7 +35,7 @@ const Hero = () => {
 
             <div className='learn_more'>
                 <h3>Learn More</h3>
-                <img src="./src/assets/arrow_with_circle.png" alt="" />
+                <img src={arrow} alt="" />
             </div>
 
             <div className="Explore_more">
