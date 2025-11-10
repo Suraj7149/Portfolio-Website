@@ -18,6 +18,34 @@ const Hero = () => {
                     <li className='item'><div className='circle'></div>Work</li>
                 </ul>
             </nav>
+
+        <div className='discription'>
+            <div className="desc_text">
+                <h1>
+                    Lorem ipsum <br />
+                    dolor sit amet.
+                </h1>
+                <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit <br />
+                    Nullam id feugiat libero.
+                </h3>
+
+            </div>
+            
+
+            <div className='learn_more'>
+                <h3>Learn More</h3>
+                <img src="./src/assets/arrow_with_circle.png" alt="" />
+            </div>
+
+            <div className="Explore_more">
+                <h3 className='Explore_more_text'>
+                    Explore a wide portfolio <br />
+                    of my works
+                </h3>
+        </div>
+        </div>
+
+        
             
         </div>
       <div className="video">
