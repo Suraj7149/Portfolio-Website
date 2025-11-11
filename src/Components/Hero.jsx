@@ -35,7 +35,10 @@ const Hero = () => {
 
             <div className='learn_more'>
                 <h3>Learn More</h3>
-                <img src={arrow} alt="" />
+                <div className="arrow">
+                    <img src={arrow} alt="arrow" />
+                </div>
+                
             </div>
 
             <div className="Explore_more">

@@ -1,0 +1,129 @@
+.service_section{
+    height: 66vh;
+    width: 100vw;
+    display: flex;
+    margin: 100px 0 10px 0;
+}
+
+.title_display{
+    width: 45%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-left: 4%;
+}
+
+.service_tag{
+    display: flex;
+    align-items: center;
+    gap: 1%;
+    width: 100%;
+    height: auto;   
+}
+
+.service_tag h3{
+    font-size: 120%;
+    font-weight: 400;
+}
+
+
+.service_title{
+    width: 100%;
+    display: flex;
+    justify-content:start;
+    
+}
+
+.service_title h1{
+    font-weight: 500;
+    font-size: 350%;
+    margin-top: 0%;
+}
+
+.services_heading{
+    width: 100%;
+}
+
+.services_heading ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    margin: 0;
+    padding: 0 0 100px 0;
+
+}
+
+.services_heading ul li{
+    display: flex;
+    align-items: center;
+    font-weight: 400;
+    font-size: 32px;
+    padding:  0 0% 0 4%;
+    cursor: pointer;
+    height: 80px;
+    
+}
+
+.active_service{
+    background: var(--overlay-linear-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    border-left: 4px solid transparent; /* keep width */
+    border-image: var(--overlay-linear-gradient);
+    border-image-slice: 1;
+}
+
+
+
+.content_display{
+    width: 55%;
+    height: 100%;
+    display: flex;   
+    margin-right: 4%;
+}
+
+
+.content_box{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    background: var(--overlay-linear-gradient);
+    height: 95%;
+    width: 90%;
+    margin: 0 0 0 10%;
+    border-radius: 50px;
+    
+}
+
+.content_box h3{
+    position: absolute;
+    bottom: 10%;
+    left: 10%;
+    font-weight: 500;
+    font-size: 120%;
+    color: var(--primary-bg-color);
+}
+
+.circle2{
+    position: relative;
+    height: 20%;
+    width: 1.6%;
+    border-radius: 50%;
+    border: 1px solid black;
+    position: relative;
+}
+
+.circle2::after {
+  content: "";
+  width: 50%;
+  height: 50%;
+  background: black;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 49%;
+  transform: translate(-50%, -50%);
+}
+
