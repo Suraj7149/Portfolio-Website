@@ -20,9 +20,7 @@ const About = () => {
             Proin id neque fermentum, finibus felis eget, tristique tortor. <br />
             Suspendisse vulputatearcu eu lectus dapibus consectetur. <br />
             Nullam tincidunt accumsan sapien eget dictum.</span>
-        </h3>
-
-      
+        </h3> 
     </div>
   )
 }

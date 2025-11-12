@@ -1,8 +1,21 @@
-import React from 'react'
+import React, {useState} from 'react'
 import './Hero.css'
 import arrow from '../assets/arrow_with_circle.png';
 
 const Hero = () => {
+    const [activeItem, setActiveItem] = useState(1); // Store the ID of the active item
+
+    const handleItemClick = (id) => {
+    setActiveItem(id);
+  };
+
+  const menuItems = [
+    { id: 1, name: 'Home' },
+    { id: 2, name: 'About' },
+    { id: 3, name: 'Service' },
+    { id: 4, name: 'Work' },
+  ];
+
   return (
     <div className='hero'>
         <div className="hero_content">
@@ -10,13 +23,19 @@ const Hero = () => {
             <nav className='navbar'>
                 <a href="">label</a>
                 <ul>
-                    <li className='item active'>
-                        <div className='circle'></div>
-                        Home
-                    </li>
-                    <li className='item'><div className='circle'></div>About</li>
+                    {/* <li className='item active'><div className='circle'></div>Home</li>
+                    <li className='item' onClick={() => {}}><div className='circle'></div>About</li>
                     <li className='item'><div className='circle'></div>Service</li>
-                    <li className='item'><div className='circle'></div>Work</li>
+                    <li className='item'><div className='circle'></div>Work</li> */}
+
+                    {menuItems.map((item) => (
+                        <li key={item.id}
+                        className={activeItem === item.id ? 'item active' : 'item'}
+                        onClick={() => handleItemClick(item.id)}>
+                            <div className='circle'></div>
+                            {item.name}
+                        </li>
+        ))}
                 </ul>
             </nav>
 
