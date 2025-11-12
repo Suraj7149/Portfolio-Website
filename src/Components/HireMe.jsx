@@ -1,6 +1,6 @@
 import React from 'react'
 import "./HireMe.css"
-import insta from '../assets/instagram_icon.png';
+import insta from '../assets/insta_icon.png';
 import link from "../assets/link_iconpng.png";
 import white_circle from "../assets/circle_icon.png";
 
