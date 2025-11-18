@@ -45,7 +45,7 @@ const Hero = () => {
                     Lorem ipsum <br />
                     dolor sit amet.
                 </h1>
-                <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit <br />
+                <h3 className='hero_desc'>Lorem ipsum dolor sit amet, consectetur adipiscing elit <br />
                     Nullam id feugiat libero.
                 </h3>
 

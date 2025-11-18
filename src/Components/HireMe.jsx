@@ -27,7 +27,6 @@ const HireMe = () => {
         </div>
         <h3>COPYRIGHT@2025 SURAJ</h3>
       </div>
-
       </div>
     </div>
   )

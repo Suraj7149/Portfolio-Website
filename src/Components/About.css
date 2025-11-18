@@ -5,6 +5,7 @@
     flex-direction: column;
     justify-self: center;
     align-items: center;
+    margin:  50px 0 30vh 0;
 }
 
 .about_me h1{
@@ -27,7 +28,7 @@
 .title_tag{
     text-decoration: none;
     color: black;
-    font-size: 120%;
+    font-size: 100%;
 }
 
 
@@ -52,7 +53,7 @@
 
 .circle1{
     position: relative;
-    height: 15%;
+    height: 35%;
     width: 5%;
     border-radius: 50%;
     border: 2px solid black;

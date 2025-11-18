@@ -5,8 +5,7 @@
     flex-direction: column;
     align-items: end;
     position: relative;
-    margin-top: 9%;
-    margin-bottom: 9%;
+    margin: 0 0 160px 0;
 }
 
 .heading3{
