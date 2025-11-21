@@ -14,8 +14,8 @@ const HireMe = () => {
           <a href="" className="title_tag">HIRE ME</a>
           <img src={white_circle} alt='' />
         </div>
-        <h1>Lorem ipsum dolor sit <br />
-            amet consectetur adipiscing elit</h1>
+        <h1>Your next big idea deserves a clean, <br />
+          bright, modern start—let’s get to work.</h1>
         
       <a className="hm_contact_us" href="">Contact Us</a>
 

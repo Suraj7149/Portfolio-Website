@@ -13,9 +13,10 @@ const Work = () => {
             <div className="circle3"></div>
         </div>
 
-        <h1>Lorem ipsum dolor sit</h1>
-        <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit <br />
-            Nullam id feugiat libero,</h2>
+        <h1>Recent Projects</h1>
+        <h2>A curated selection of websites and interfaces <br />
+            I’ve built—each crafted with attention to detail, <br />
+            performance, and a bright, user-friendly experience.</h2>
 
         <div className="work_arrows">
             <img src={image2} alt="" />

@@ -10,7 +10,7 @@ const Services = () => {
                 <h3>SERVICES</h3>
             </div>
             <div className="service_title">
-                <h1>Lorem Ipsumdo</h1>
+                <h1>What I Can Do for You</h1>
             </div>
             <div className="services_heading">
                 <ul>
@@ -23,10 +23,11 @@ const Services = () => {
         </div>
         <div className="content_display">
             <div className="content_box">
-                <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc <br />
-                    sapien dui, molestie sed eleifend a, ornare ut ligula. Praesent <br />
-                    vel tellus at sem iaculis pretium ut non turpis Maecenas <br />
-                    scelerisque eget eros at commodo. Etiam commodo finibus erat.</h3>
+                <h3>Clean, intuitive layouts designed with purpose and focus on <br />
+                    structuring information clearly, creating visually bright  <br />
+                    interfaces, and crafting user flows that feel natural. <br />
+                    Every design choice is guided by usability and your <br />
+                    brand’s personality—no clutter, no confusion.</h3>
             </div>
         </div>
       

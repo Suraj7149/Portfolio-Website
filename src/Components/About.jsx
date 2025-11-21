@@ -11,15 +11,17 @@ const About = () => {
         
 
         <h1>
-            Lorem ipsum <span>dolor</span>  sit amet <br />
-            <span>consectetur</span> adipiscing elit. <span>Quisque</span>
+            Bringing <span>Warmth,</span> Clarity & <br />
+            <span>Structure </span>to the <span>Web</span>
         </h1>
         <h3>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br />
-            Quisque sed neque ac <span>sapien sollicitudin molestie et ac lectus. <br />
-            Proin id neque fermentum, finibus felis eget, tristique tortor. <br />
-            Suspendisse vulputatearcu eu lectus dapibus consectetur. <br />
-            Nullam tincidunt accumsan sapien eget dictum.</span>
+            Just like a sunrise sets the tone for the day, a well-designed website sets the tone for your business. <br />
+            I build modern front-end experiences that feel bright, balanced, and easy to use—crafted with  <br />
+            clean UI, smooth interactions, and strong technical foundations.  <br />
+            <span>Working with tools like React, JavaScript (ES6+), TailwindCSS, Node.js, Express, SQL,  <br />
+            Redux Toolkit, Git, and Figma, I help clients shape websites that load faster, look sharper,  <br />
+            and communicate with clarity. From interface planning to the final polished build <br />
+            I’m here to make the process simple and seamless. <br /></span>
         </h3> 
     </div>
   )

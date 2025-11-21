@@ -42,11 +42,11 @@ const Hero = () => {
         <div className='discription'>
             <div className="desc_text">
                 <h1>
-                    Lorem ipsum <br />
-                    dolor sit amet.
+                    Bright, Bold, and <br />
+                    Purposeful Web Design
                 </h1>
-                <h3 className='hero_desc'>Lorem ipsum dolor sit amet, consectetur adipiscing elit <br />
-                    Nullam id feugiat libero.
+                <h3 className='hero_desc'>I create modern interfaces and seamless user experiences<br />
+                    that help your business shine online.
                 </h3>
 
             </div>
