@@ -1,21 +1,28 @@
-import React, {useState} from 'react'
+import React, {useState, useRef} from 'react'
 import './Hero.css'
 import arrow from '../assets/arrow_with_circle.png';
+import circle from '../assets/Picture1.png';
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
+
+gsap.registerPlugin(useGSAP); 
 
 const Hero = () => {
-    const [activeItem, setActiveItem] = useState(1); // Store the ID of the active item
+   const [selectedItem, setSelectedItem] = useState(1);
 
-    const handleItemClick = (id) => {
-    setActiveItem(id);
+  // Run GSAP whenever selectedItem changes
+  useGSAP(() => {
+    gsap.to(".activated", {
+      left: 25 * (selectedItem - 1) + "%",
+      duration: 1,
+      ease: "power2.out",
+    });
+  }, [selectedItem]);
+
+  const handleItemClick = (index) => {
+    setSelectedItem(index);
   };
-
-  const menuItems = [
-    { id: 1, name: 'Home' },
-    { id: 2, name: 'About' },
-    { id: 3, name: 'Service' },
-    { id: 4, name: 'Work' },
-  ];
-
+    
   return (
     <div className='hero'>
         <div className="hero_content">
@@ -23,19 +30,11 @@ const Hero = () => {
             <nav className='navbar'>
                 <a href="">label</a>
                 <ul>
-                    {/* <li className='item active'><div className='circle'></div>Home</li>
-                    <li className='item' onClick={() => {}}><div className='circle'></div>About</li>
-                    <li className='item'><div className='circle'></div>Service</li>
-                    <li className='item'><div className='circle'></div>Work</li> */}
-
-                    {menuItems.map((item) => (
-                        <li key={item.id}
-                        className={activeItem === item.id ? 'item active' : 'item'}
-                        onClick={() => handleItemClick(item.id)}>
-                            <div className='circle'></div>
-                            {item.name}
-                        </li>
-        ))}
+                    <span className='activated'><img src={circle} alt="" /></span>
+                    <li className='item' onClick={() => handleItemClick(1)}>Home</li>
+                    <li className='item' onClick={() => handleItemClick(2)}>About</li>
+                    <li className='item' onClick={() => handleItemClick(3)}>Service</li>
+                    <li className='item item4' onClick={() => handleItemClick(4)}>Work</li>
                 </ul>
             </nav>
 
