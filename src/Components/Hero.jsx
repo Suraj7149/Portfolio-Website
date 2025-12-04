@@ -10,11 +10,10 @@ gsap.registerPlugin(useGSAP);
 const Hero = () => {
    const [selectedItem, setSelectedItem] = useState(1);
 
-  // Run GSAP whenever selectedItem changes
   useGSAP(() => {
     gsap.to(".activated", {
       left: 25 * (selectedItem - 1) + "%",
-      duration: 1,
+      duration: 0.3,
       ease: "power2.out",
     });
   }, [selectedItem]);
