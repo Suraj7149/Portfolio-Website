@@ -1,15 +1,18 @@
-import React, {useState, useRef} from 'react'
+import React, {useState, useRef, useEffect} from 'react'
 import './Hero.css'
 import arrow from '../assets/arrow_with_circle.png';
 import circle from '../assets/Picture1.png';
 import gsap from 'gsap';
-import { useGSAP } from '@gsap/react';
+import { useGSAP, } from '@gsap/react';
+import { SplitText } from 'gsap/SplitText';
 
 gsap.registerPlugin(useGSAP); 
+gsap.registerPlugin(SplitText) 
 
 const Hero = () => {
-   const [selectedItem, setSelectedItem] = useState(1);
+  const [selectedItem, setSelectedItem] = useState(1);
 
+  // GSAP Animation for Navbar Indicator
   useGSAP(() => {
     gsap.to(".activated", {
       left: 25 * (selectedItem - 1) + "%",
@@ -21,6 +24,26 @@ const Hero = () => {
   const handleItemClick = (index) => {
     setSelectedItem(index);
   };
+
+  // GSAP Animation for Hero Description
+
+  useEffect(() => {
+    const split = new SplitText(".desc_text", {
+      type: "lines, words",
+      mask: "lines"
+    });
+
+    gsap.from(split.words, {
+      duration: 1,
+      y: 100,
+      opacity: 0,
+      stagger: 0.05
+    });
+
+    // cleanup: revert split on unmount
+    return () => split.revert();
+  }, []);
+
     
   return (
     <div className='hero'>
@@ -46,18 +69,8 @@ const Hero = () => {
                 <h3 className='hero_desc'>I create modern interfaces and seamless user experiences<br />
                     that help your business shine online.
                 </h3>
-
             </div>
             
-
-            <div className='learn_more'>
-                <h3>Learn More</h3>
-                <div className="arrow">
-                    <img src={arrow} alt="arrow" />
-                </div>
-                
-            </div>
-
             <div className="Explore_more">
                 <h3 className='Explore_more_text'>
                     Explore a wide portfolio <br />
