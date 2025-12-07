@@ -29,18 +29,24 @@ const Hero = () => {
 
   useEffect(() => {
     const split = new SplitText(".desc_text", {
-      type: "lines, words",
+      type: "lines, words, chars",
       mask: "lines"
     });
 
     gsap.from(split.words, {
-      duration: 1,
+      duration: 1.2,
       y: 100,
       opacity: 0,
-      stagger: 0.05
+      stagger: 0.09
     });
 
-    // cleanup: revert split on unmount
+    gsap.to(split.words, {
+      duration: 1.2,
+      y: 0,
+      opacity: 1,
+      stagger: 0.09
+    });
+
     return () => split.revert();
   }, []);
 
@@ -66,15 +72,16 @@ const Hero = () => {
                     Bright, Bold, and <br />
                     Purposeful Web Design
                 </h1>
+                
                 <h3 className='hero_desc'>I create modern interfaces and seamless user experiences<br />
-                    that help your business shine online.
-                </h3>
+                  that help your business shine online.
+                </h3>                
             </div>
             
             <div className="Explore_more">
                 <h3 className='Explore_more_text'>
                     Explore a wide portfolio <br />
-                    of my works
+                    of my works.
                 </h3>
         </div>
         </div>
