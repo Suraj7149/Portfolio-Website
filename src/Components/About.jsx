@@ -1,27 +1,97 @@
-import React from 'react'
+import React, {useState, useRef, useEffect, use} from 'react'
 import './About.css'
+import circle2 from '../assets/black_circle_abour_me.png';
+
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { SplitText } from "gsap/SplitText";
+
+gsap.registerPlugin(ScrollTrigger, SplitText);
+
 const About = () => {
+
+  // Heading Animation
+  useEffect(() => {
+  const split = new SplitText(".about_me_heading", {
+    type: "words, chars",
+    mask: "lines"
+  });
+
+  gsap.from(split.words, {
+    y: 100,
+    opacity: 0,
+    stagger: 0.08,
+    duration: 1.5,
+    ease: "power2.out",
+    scrollTrigger: {
+      trigger: ".about_me_heading",
+      start: "top 80%",   // when heading enters viewport
+      toggleActions: "play none none reset"
+    }
+  });
+
+  return () => split.revert();
+  }, []);
+
+
+  
+  // Description Animation
+  useEffect(() => {
+  const split = new SplitText(".about_me_desc", {
+    type: "words, chars",
+    mask: "lines"
+  });
+
+  gsap.from(split.words, {
+    y: 100,
+    opacity: 0,
+    stagger: 0.06,
+    duration: 1.5,
+    ease: "power2.out",
+    scrollTrigger: {
+      trigger: ".about_me_desc",
+      start: "top 85%",
+      toggleActions: "play none none reset"
+    }
+  });
+
+  return () => split.revert();
+  }, []);
+
+  // TItle animation
+  useEffect(() => {
+  gsap.fromTo(
+    ".heading",
+    { opacity: 0 },
+    {
+      opacity: 1,
+      duration: 2,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: ".heading",
+        start: "top 90%",
+        toggleActions: "play none none reset"
+      }
+    }
+  );
+  }, []);
+
+
   return (
     <div className='about_me'>
         <div className="heading">
-            <div className="circle1"></div>
+            <img src={circle2} alt="" className='about_me_circle' />
             <a href="" className="title_tag">ABOUT ME</a>
-            <div className="circle1"></div>
-        </div>
-        
-
-        <h1>
+            <img src={circle2} alt="" className='about_me_circle'/>
+        </div>    
+        <h1 className='about_me_heading'>
             Bringing <span>Warmth,</span> Clarity & <br />
             <span>Structure </span>to the <span>Web</span>
         </h1>
-        <h3>
-            Just like a sunrise sets the tone for the day, a well-designed website sets the tone for your business. <br />
-            I build modern front-end experiences that feel bright, balanced, and easy to use—crafted with  <br />
-            clean UI, smooth interactions, and strong technical foundations.  <br />
-            <span>Working with tools like React, JavaScript (ES6+), TailwindCSS, Node.js, Express, SQL,  <br />
-            Redux Toolkit, Git, and Figma, I help clients shape websites that load faster, look sharper,  <br />
-            and communicate with clarity. From interface planning to the final polished build <br />
-            I’m here to make the process simple and seamless. <br /></span>
+        <h3 className='about_me_desc'>
+            Just like a sunrise sets the tone for the day, a well-designed <br />
+            website sets the tone for your business.
+            <span> I build modern front- <br />end experiences that feel bright, balanced, and easy to use. <br /> Crafted with clean UI, smooth interactions, and strong technical <br />foundations.</span>
         </h3> 
     </div>
   )

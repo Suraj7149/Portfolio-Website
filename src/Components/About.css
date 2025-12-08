@@ -1,16 +1,14 @@
 .about_me{
-    height: 70vh;
+    height: 80vh;
     width: 100vw;
     display: flex;
     flex-direction: column;
-    justify-self: center;
+    justify-content: start;
     align-items: center;
-    margin:  50px 0 30vh 0;
-}
-
-.about_me h1{
+    margin:  12% 0 0vh 0;
     text-align: center;
 }
+
 
 .heading{
     display: flex;
@@ -18,8 +16,7 @@
     text-align: center;
     justify-content: center;
     height: 10%;
-    width: 10%;
-    margin-top: 5%;
+    width: 12%;
     gap: 5%;
 }
 
@@ -29,12 +26,23 @@
     text-decoration: none;
     color: black;
     font-size: 100%;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.heading img{
+    height: 18%;
+    width: 7.5%;
+    white-space: nowrap;
+    flex-shrink: 0;
 }
 
 
 .about_me h1{
     font-weight: 500;
     font-size: 300%;
+    margin: 3.55% 0 0 0;
+    padding: 0;
 }
 
 .about_me h1 span{
@@ -45,29 +53,10 @@
     font-weight: 400;
     font-size: 180%;
     line-height: 130%;
+    margin: 3.55% 0 0 0;
+    padding: 0;
 
 }
 .about_me h3 span{
     color: #909090;
-}
-
-.circle1{
-    position: relative;
-    height: 35%;
-    width: 5%;
-    border-radius: 50%;
-    border: 2px solid black;
-    position: relative;
-}
-
-.circle1::after {
-  content: "";
-  width: 50%;
-  height: 50%;
-  background: black;
-  border-radius: 50%;
-  position: absolute;
-  top: 50%;
-  left: 49%;
-  transform: translate(-50%, -50%);
 }

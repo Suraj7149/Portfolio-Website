@@ -28,13 +28,12 @@ const Hero = () => {
   };
 
   // GSAP Animation for Hero Description
-
   useEffect(() => {
-    const split = new SplitText(".desc_text", {
+    const split = new SplitText(".hero_heading", {
       type: "lines, words, chars",
       mask: "lines"
     });
-
+    
     gsap.from(split.words, {
       duration: 1.5,
       y: 100,
@@ -53,7 +52,31 @@ const Hero = () => {
     return () => split.revert();
   }, []);
 
-  // GSAP Animation for video
+  useEffect(() => {
+    const split = new SplitText(".hero_desc", {
+      type: "lines, words, chars",
+      mask: "lines"
+    });
+    
+    gsap.from(split.lines, {
+      duration: 1.5,
+      y: 100,
+      opacity: 0,
+      stagger: 0.09
+    });
+
+    gsap.to(split.lines, {
+      duration: 1.5,
+      y: 0,
+      opacity: 1,
+      stagger: 0.09,
+      ease: "power2.out",
+    });
+
+    return () => split.revert();
+  }, []);
+
+  // GSAP Animation for video and Contact Us Button
   useEffect(() => {
     gsap.fromTo(".vid", 
     { 
@@ -170,13 +193,14 @@ const Hero = () => {
 
         <div className='discription'>
             <div className="desc_text">
-                <h1>
+                <h1 className='hero_heading'>
                     Bright, Bold, and <br />
                     Purposeful Web Design
                 </h1>
                 
-                <h3 className='hero_desc'>I create modern interfaces and seamless user experiences<br />
-                  that help your business shine online.
+                <h3 className='hero_desc'>Thoughtfully crafted websites and interfaces that feel smooth, <br />
+                  responsive, and bring clarity to your online presence <br />
+                  Just like a fresh sunrise for your brand.<br />
                 </h3>                
             </div>
             
