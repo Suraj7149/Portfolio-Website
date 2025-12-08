@@ -3,11 +3,13 @@ import './Hero.css'
 import arrow from '../assets/arrow_with_circle.png';
 import circle from '../assets/Picture1.png';
 import gsap from 'gsap';
-import { useGSAP, } from '@gsap/react';
+import { useGSAP } from '@gsap/react';
 import { SplitText } from 'gsap/SplitText';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(useGSAP); 
-gsap.registerPlugin(SplitText) 
+gsap.registerPlugin(SplitText);
+gsap.registerPlugin(ScrollTrigger);
 
 const Hero = () => {
   const [selectedItem, setSelectedItem] = useState(1);
@@ -56,34 +58,37 @@ const Hero = () => {
     gsap.fromTo(".vid", 
     { 
       opacity: 0,
-      scale: 0.7,
-      borderRadius: "600px",
+      scale: 1,
+      // borderRadius: "600px",
       x: "100%"
     }, 
 
     { 
       scale: 1, 
       duration: 1.5, 
-      borderRadius: "0px",
+      // borderRadius: "0px",
       x: "0%",
       opacity: 1,
       ease: "power2.out", 
       // stagger: 0.09
 
-    });
+      
+
+    }, 
+  );
 
     // GSAP Animation for Contact Us Button
     gsap.fromTo(".contact_us", 
     { 
       opacity: 0,
-      scale: 0.7,
-      x: 400,
+      // scale: 0.7,
+      // x: 400,
     }, 
 
     { 
-      scale: 1, 
+      // scale: 1, 
       duration: 2.5, 
-      x: 0,
+      // x: 0,
       opacity: 1,
       ease: "power2.out",
 
@@ -95,14 +100,14 @@ const Hero = () => {
     gsap.fromTo(".Explore_more", 
     { 
       opacity: 0,
-      width: "20%",
-      x: -400,
+      width: "4%",
+      // x: -400,
     }, 
 
     { 
       width: "40%",
       duration: 2.5, 
-      x: 0,
+      // x: 0,
       opacity: 1,
       ease: "power2.out",
 
@@ -116,14 +121,14 @@ const Hero = () => {
     gsap.fromTo(".navbar", 
     { 
       opacity: 0,
-      width: "40%",
-      x: -400,
+      // width: "10%",
+      // x: -400,
     }, 
 
     { 
-      width: "100%",
+      // width: "100%",
       duration: 2.5, 
-      x: 0,
+      // x: 0,
       opacity: 1,
       ease: "power2.out",
 
@@ -132,13 +137,27 @@ const Hero = () => {
   }, []);
   
   
+//   useEffect(() => {
+//   gsap.to(".video", {
+//     width: "100%",
+//     x: 0,
+//     duration: 2,
+//     ease: "power2.inOut",
 
+//     scrollTrigger: {
+//       trigger: document.documentElement, // listens to page scroll
+//       start: "0 top",                  // start at 100px scroll
+//       toggleActions: "play none none reverse",
+//       // markers: true,
+//     }
+//   });
+// }, []);
     
   return (
     <div className='hero'>
-        <div className="hero_content">
+      <div className="hero_content">
             
-            <nav className='navbar'>
+        <nav className='navbar'>
                 <a href="">label</a>
                 <ul>
                     <span className='activated'><img src={circle} alt="" /></span>
@@ -147,7 +166,7 @@ const Hero = () => {
                     <li className='item' onClick={() => handleItemClick(3)}>Service</li>
                     <li className='item item4' onClick={() => handleItemClick(4)}>Work</li>
                 </ul>
-            </nav>
+        </nav>
 
         <div className='discription'>
             <div className="desc_text">
@@ -167,18 +186,19 @@ const Hero = () => {
                     of my works.
                 </h3>
         </div>
-        </div>
-
-        
+        </div>      
             
-        </div>
+      </div>
+
       <div className="video"> 
         <video 
         className='vid'
         src="https://cdn.pixabay.com/video/2023/03/08/153821-806526710_large.mp4" 
         autoPlay 
         loop 
-        muted />  
+        muted 
+        
+        />  
         <button className="contact_us">
             Contact Us
         </button>
