@@ -13,6 +13,10 @@
   background-color: var(--primary-bg-color);
   overflow: hidden;
 }
+
+
+
+
 .hero_content{
     height: 100%;
     width: 50%;
@@ -107,21 +111,17 @@
     justify-content: space-evenly;
     align-items: start;
 }
-
 .discription h1{
     font-size: 64px;
     font-weight: 500;
     margin: 0;
     padding: 0;
 }
-
 .hero_desc{
     font-size: 18px;
     font-weight: 400;
-
     margin: 5px 0 0 0;
-    padding: 0;
-    
+    padding: 0;   
 }
 .Explore_more{
     background: var(--linear-gradient);

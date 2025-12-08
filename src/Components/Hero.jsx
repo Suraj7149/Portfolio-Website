@@ -1,4 +1,4 @@
-import React, {useState, useRef, useEffect} from 'react'
+import React, {useState, useRef, useEffect, use} from 'react'
 import './Hero.css'
 import arrow from '../assets/arrow_with_circle.png';
 import circle from '../assets/Picture1.png';
@@ -34,21 +34,104 @@ const Hero = () => {
     });
 
     gsap.from(split.words, {
-      duration: 1.2,
+      duration: 1.5,
       y: 100,
       opacity: 0,
       stagger: 0.09
     });
 
     gsap.to(split.words, {
-      duration: 1.2,
+      duration: 1.5,
       y: 0,
       opacity: 1,
-      stagger: 0.09
+      stagger: 0.09,
+      ease: "power2.out",
     });
 
     return () => split.revert();
   }, []);
+
+  // GSAP Animation for video
+  useEffect(() => {
+    gsap.fromTo(".vid", 
+    { 
+      opacity: 0,
+      scale: 0.7,
+      borderRadius: "600px",
+      x: "100%"
+    }, 
+
+    { 
+      scale: 1, 
+      duration: 1.5, 
+      borderRadius: "0px",
+      x: "0%",
+      opacity: 1,
+      ease: "power2.out", 
+      // stagger: 0.09
+
+    });
+
+    // GSAP Animation for Contact Us Button
+    gsap.fromTo(".contact_us", 
+    { 
+      opacity: 0,
+      scale: 0.7,
+      x: 400,
+    }, 
+
+    { 
+      scale: 1, 
+      duration: 2.5, 
+      x: 0,
+      opacity: 1,
+      ease: "power2.out",
+
+    });
+  }, []);
+
+  // GSAP Animation for Explore More
+  useEffect(() => {
+    gsap.fromTo(".Explore_more", 
+    { 
+      opacity: 0,
+      width: "20%",
+      x: -400,
+    }, 
+
+    { 
+      width: "40%",
+      duration: 2.5, 
+      x: 0,
+      opacity: 1,
+      ease: "power2.out",
+
+    });
+    
+  }, []);
+
+
+  // GSAP Animation for navbar
+  useEffect(() => {
+    gsap.fromTo(".navbar", 
+    { 
+      opacity: 0,
+      width: "40%",
+      x: -400,
+    }, 
+
+    { 
+      width: "100%",
+      duration: 2.5, 
+      x: 0,
+      opacity: 1,
+      ease: "power2.out",
+
+    });
+    
+  }, []);
+  
+  
 
     
   return (
@@ -89,10 +172,15 @@ const Hero = () => {
         
             
         </div>
-      <div className="video">
-        <div className="overlay"></div>
+      <div className="video"> 
+        <video 
+        className='vid'
+        src="https://cdn.pixabay.com/video/2023/03/08/153821-806526710_large.mp4" 
+        autoPlay 
+        loop 
+        muted />  
         <button className="contact_us">
-                Contact Us
+            Contact Us
         </button>
       </div>
     </div>
