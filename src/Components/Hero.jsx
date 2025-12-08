@@ -34,20 +34,25 @@ const Hero = () => {
       mask: "lines"
     });
     
-    gsap.from(split.words, {
-      duration: 1.5,
+    gsap.fromTo(
+    split.words,
+    {
       y: 100,
       opacity: 0,
-      stagger: 0.09
-    });
-
-    gsap.to(split.words, {
-      duration: 1.5,
+    },
+    {
       y: 0,
       opacity: 1,
-      stagger: 0.09,
+      duration: 1.5,
       ease: "power2.out",
-    });
+      stagger: 0.09,
+      scrollTrigger: {
+        trigger: ".hero_heading",
+        start: "top 80%",
+        toggleActions: "play reset play reset",
+      }
+    }
+  );
 
     return () => split.revert();
   }, []);
@@ -58,20 +63,25 @@ const Hero = () => {
       mask: "lines"
     });
     
-    gsap.from(split.lines, {
-      duration: 1.5,
+    gsap.fromTo(
+    split.words,
+    {
       y: 100,
       opacity: 0,
-      stagger: 0.09
-    });
-
-    gsap.to(split.lines, {
-      duration: 1.5,
+    },
+    {
       y: 0,
       opacity: 1,
-      stagger: 0.09,
+      duration: 1.5,
       ease: "power2.out",
-    });
+      stagger: 0.09,
+      scrollTrigger: {
+        trigger: ".hero_desc",
+        start: "top 80%",
+        toggleActions: "play reset play reset",
+      }
+    }
+  );
 
     return () => split.revert();
   }, []);

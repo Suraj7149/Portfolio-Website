@@ -25,8 +25,8 @@ const About = () => {
     ease: "power2.out",
     scrollTrigger: {
       trigger: ".about_me_heading",
-      start: "top 80%",   // when heading enters viewport
-      toggleActions: "play none none reset"
+      start: "top 75%",
+      toggleActions: "play none restart reverse"
     }
   });
 
@@ -46,12 +46,12 @@ const About = () => {
     y: 100,
     opacity: 0,
     stagger: 0.06,
-    duration: 1.5,
+    duration: 1,
     ease: "power2.out",
     scrollTrigger: {
-      trigger: ".about_me_desc",
-      start: "top 85%",
-      toggleActions: "play none none reset"
+      trigger: ".about_me",
+      start: "top 35%",
+      toggleActions: "play none restart reverse"
     }
   });
 
@@ -60,17 +60,16 @@ const About = () => {
 
   // TItle animation
   useEffect(() => {
-  gsap.fromTo(
-    ".heading",
-    { opacity: 0 },
+    gsap.fromTo(".heading",
+      { opacity: 0 },
     {
       opacity: 1,
       duration: 2,
       ease: "power2.out",
       scrollTrigger: {
         trigger: ".heading",
-        start: "top 90%",
-        toggleActions: "play none none reset"
+        start: "top 80%",
+      toggleActions: "play none restart reverse"
       }
     }
   );
