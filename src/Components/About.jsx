@@ -33,33 +33,94 @@ const About = () => {
   return () => split.revert();
   }, []);
 
-
   
   // Description Animation
+
+  // working version 
   useEffect(() => {
-  const split = new SplitText(".about_me_desc", {
-    type: "words, chars",
-    mask: "lines"
-  });
 
-  gsap.from(split.words, {
-    y: 100,
-    opacity: 0,
-    stagger: 0.06,
-    duration: 1,
-    ease: "power2.out",
-    scrollTrigger: {
-      trigger: ".about_me",
-      start: "top 35%",
-      toggleActions: "play none restart reverse"
-    }
-  });
 
-  return () => split.revert();
+    const split = new SplitText(".desc1", {
+      type: "words, chars",
+      mask: "lines"
+    });
+
+    const split2 = new SplitText(".desc2", {
+      type: "words, chars",
+      mask: "lines"
+    });
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".about_me",
+        // start: "top 35%",
+        // end: "bottom top",
+        
+        start : "top 20%",
+        end: "+=400",         
+        scrub: true,
+        // pin: true,            // <--- REQUIRED
+        pinSpacing: true,
+        markers: true,
+        toggleActions: "play none restart reverse",
+        
+      },
+    });
+
+    tl.from(split.words, {
+      y: 30,
+      opacity: 0,
+      stagger: 0.06,
+      duration: 1,
+      ease: "power2.out",
+      delay: 0.5,
+    });
+
+    tl.to(split.words, {
+      y: 0,
+      opacity: 1,
+      stagger: 0.06,
+      duration: 1,
+      ease: "power2.out",
+      delay: 0.5,
+    });
+
+    tl.to(split.words, {
+      y: 30,
+      opacity: 0,
+      stagger: 0.06,
+      duration: 1,
+      ease: "power2.out",
+      delay: 0.5,
+    });
+
+    tl.from(split2.words, {
+      y: 30,
+      opacity: 0,
+      stagger: 0.06,
+      duration: 1,
+      ease: "power2.out",
+      delay: 0.5,
+    });
+
+    tl.to(split2.words, {
+      y: 0,
+      opacity: 1,
+      stagger: 0.06,
+      duration: 1,
+      ease: "power2.out",
+      delay: 0.5,
+    });
+
+    return () => split.revert();
+
   }, []);
+
+
 
   // TItle animation
   useEffect(() => {
+    
     gsap.fromTo(".heading",
       { opacity: 0 },
     {
@@ -82,16 +143,30 @@ const About = () => {
             <img src={circle2} alt="" className='about_me_circle' />
             <a href="" className="title_tag">ABOUT ME</a>
             <img src={circle2} alt="" className='about_me_circle'/>
-        </div>    
+        </div> 
+           
         <h1 className='about_me_heading'>
+          <div className="heading1">
             Bringing <span>Warmth,</span> Clarity & <br />
             <span>Structure </span>to the <span>Web</span>
+          </div>
+          <div className="heading2">
+            Hello! I’m <span>Suraj</span> <br />
+            Your <span>Front-End Partner</span>
+          </div>
         </h1>
+
         <h3 className='about_me_desc'>
+          <div className="desc1">
             Just like a sunrise sets the tone for the day, a well-designed <br />
             website sets the tone for your business.
             <span> I build modern front- <br />end experiences that feel bright, balanced, and easy to use. <br /> Crafted with clean UI, smooth interactions, and strong technical <br />foundations.</span>
-        </h3> 
+          </div>
+          <div className="desc2">
+              With experience in React, ES6+, Tailwind, Node.js, SQL, Git, <br />Redux, and Figma, I help businesses turn ideas into reliable <br />digital products that look great, run smoothly, and scale for <br />the future.
+          </div>
+        </h3>
+
     </div>
   )
 }
