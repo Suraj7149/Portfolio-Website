@@ -9,63 +9,97 @@ import { SplitText } from "gsap/SplitText";
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
 const About = () => {
-
-  // Heading Animation
-  useEffect(() => {
-  const split = new SplitText(".about_me_heading", {
-    type: "words, chars",
-    mask: "lines"
-  });
-
-  gsap.from(split.words, {
-    y: 100,
-    opacity: 0,
-    stagger: 0.08,
-    duration: 1.5,
-    ease: "power2.out",
-    scrollTrigger: {
-      trigger: ".about_me_heading",
-      start: "top 75%",
-      toggleActions: "play none restart reverse"
-    }
-  });
-
-  return () => split.revert();
-  }, []);
-
-  
-  // Description Animation
-
+  // Heading & Description Animation
   // working version 
   useEffect(() => {
 
-
-    const split = new SplitText(".desc1", {
-      type: "words, chars",
-      mask: "lines"
-    });
-
-    const split2 = new SplitText(".desc2", {
-      type: "words, chars",
-      mask: "lines"
-    });
+    document.fonts.ready.then(() => {
+      const heading1 = new SplitText(".heading1", {
+        type: "words, chars",
+        mask: "lines"
+      });
+      const heading2 = new SplitText(".heading2", {
+        type: "words, chars",
+        mask: "lines"
+      });
+      const split = new SplitText(".desc1", {
+        type: "words, chars",
+        mask: "lines"
+      });
+      const split2 = new SplitText(".desc2", {
+        type: "words, chars",
+        mask: "lines"
+      });
 
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: ".about_me",
-        // start: "top 35%",
-        // end: "bottom top",
-        
-        start : "top 20%",
-        end: "+=400",         
-        scrub: true,
+        start : "top 35%",
+        end: "+=700",   
+        scrub: 0.5,      
+        // scrub: true,
         // pin: true,            // <--- REQUIRED
         pinSpacing: true,
-        markers: true,
+        // markers: true,
         toggleActions: "play none restart reverse",
         
       },
     });
+
+    const tl_heading = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".about_me",
+        start : "top 45%",
+        end: "+=600",   
+        scrub: 0.5,      
+        // scrub: true,
+        // pin: true,            // <--- REQUIRED
+        pinSpacing: true,
+        // markers: true,
+        toggleActions: "play none restart reverse",
+        
+      },
+    });
+
+    tl_heading.from(heading1.words, {
+      y: 40,
+      opacity: 0,
+      stagger: 0.08,
+      duration: 1,
+      ease: "power2.out",
+    }, );
+
+    tl_heading.to(heading1.words, {
+      y: 0,
+      opacity: 1,
+      stagger: 0.08,
+      duration: 1,
+      ease: "power2.out",
+    }, );
+
+    tl_heading.to(heading1.words, {
+      y: -40,
+      opacity: 0,
+      stagger: 0.08,
+      duration: 1,
+      ease: "power2.out",
+    }, );
+
+    tl_heading.from(heading2.words, {
+      y: 40,
+      opacity: 0,
+      stagger: 0.08,
+      duration: 1,
+      ease: "power2.out",
+    }, "pane2");
+
+    tl.to(heading2.words, {
+      y: 0,
+      opacity: 0,
+      stagger: 0.08,
+      duration: 1,
+      ease: "power2.out",
+    }, );
 
     tl.from(split.words, {
       y: 30,
@@ -73,8 +107,7 @@ const About = () => {
       stagger: 0.06,
       duration: 1,
       ease: "power2.out",
-      delay: 0.5,
-    });
+    }, );
 
     tl.to(split.words, {
       y: 0,
@@ -82,17 +115,15 @@ const About = () => {
       stagger: 0.06,
       duration: 1,
       ease: "power2.out",
-      delay: 0.5,
-    });
+    }, );
 
     tl.to(split.words, {
-      y: 30,
+      y: -30,
       opacity: 0,
       stagger: 0.06,
       duration: 1,
       ease: "power2.out",
-      delay: 0.5,
-    });
+    }, );
 
     tl.from(split2.words, {
       y: 30,
@@ -100,8 +131,7 @@ const About = () => {
       stagger: 0.06,
       duration: 1,
       ease: "power2.out",
-      delay: 0.5,
-    });
+    }, );
 
     tl.to(split2.words, {
       y: 0,
@@ -109,16 +139,16 @@ const About = () => {
       stagger: 0.06,
       duration: 1,
       ease: "power2.out",
-      delay: 0.5,
-    });
+    }, );
 
-    return () => split.revert();
+
+    // return () => split.revert();
+    });
 
   }, []);
 
 
-
-  // TItle animation
+  // About Me Title animation
   useEffect(() => {
     
     gsap.fromTo(".heading",

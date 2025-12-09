@@ -1,5 +1,5 @@
 .about_me{
-    height: 100vh;
+    height: 70vh;
     width: 100vw;
     display: flex;
     flex-direction: column;
@@ -21,13 +21,9 @@
     gap: 5%;
     margin: 0;
     padding: 0;
+    
 }
 
-.heading2{
-    height: 0;
-    width: 0;
-    scale: 0;
-}
 
 
 .title_tag{
@@ -56,6 +52,18 @@
 .about_me h1 span{
     color: var(--secondary-bg-color);
 }
+
+.about_me_heading{
+    position: relative;
+}
+
+.heading2{
+    position: absolute;
+    opacity: 1;
+    top: 0;
+    left: 3.5%;
+}
+
 
 .about_me h3{
     font-weight: 400;
