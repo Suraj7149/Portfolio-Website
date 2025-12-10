@@ -19,7 +19,7 @@ const Hero = () => {
     gsap.to(".activated", {
       left: 25 * (selectedItem - 1) + "%",
       duration: 0.3,
-      ease: "power2.out",
+      ease: "back.out",
     });
   }, [selectedItem]);
 

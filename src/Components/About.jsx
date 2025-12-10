@@ -34,15 +34,14 @@ const New_About = () => {
           trigger: ".about_me",
           start: "top top",
           end: "+=100%",
-          scrub: true,
+          scrub: 5,
           pin: true,
           pinSpacing: false,
           // markers: true,
         }
       });
       // tl.to(".tobepinned", { height: "100vh" })
-      // tl.from(".heading", {y: 30, opacity: 0, stagger: 0.06, duration: 1, ease: "power2.out",})
-      // tl.to(".heading", {y: 30, opacity: 0, stagger: 0.06, duration: 1, ease: "power2.out",})
+      tl.from(".heading", {y: 30, opacity: 0, stagger: 0.06, duration: 1, ease: "power2.out",})
       tl.from(heading1.words, {y: 30, opacity: 0, stagger: 0.06, duration: 1, ease: "power2.out",})
       tl.to(heading1.words, {y: 0, opacity: 1, stagger: 0.06, duration: 1, ease: "power2.out",})
       tl.from(split.words, {y: 30, opacity: 0, stagger: 0.06, duration: 1, ease: "power2.out",})
