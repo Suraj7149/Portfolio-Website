@@ -5,10 +5,13 @@ import circle2 from '../assets/black_circle_abour_me.png';
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SplitText } from "gsap/SplitText";
+import img1 from '../assets/download.png'; 
 
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
 const About = () => {
+  
+
   // Heading & Description Animation
   // working version 
   useEffect(() => {
@@ -147,8 +150,6 @@ const About = () => {
 
   }, []);
 
-
-  // About Me Title animation
   useEffect(() => {
     
     gsap.fromTo(".heading",
@@ -196,6 +197,8 @@ const About = () => {
               With experience in React, ES6+, Tailwind, Node.js, SQL, Git, <br />Redux, and Figma, I help businesses turn ideas into reliable <br />digital products that look great, run smoothly, and scale for <br />the future.
           </div>
         </h3>
+
+        
 
     </div>
   )
