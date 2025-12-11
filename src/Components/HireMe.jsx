@@ -184,7 +184,7 @@ const HireMe = () => {
 
         <h1 className="hm_desc">A new day for your business starts <br />
           with a better website <br />
-          Let’s make it happen</h1>
+          Let’s make it happen.</h1>
         
       <a className="hm_contact_us" href="">Contact Us</a>
 
