@@ -71,7 +71,7 @@ const HireMe = () => {
       {
         y: 0,
         opacity: 1,
-        duration: 3,
+        duration: 2,
         ease: "power2.out",
         stagger: 0.09,
         // delay: 2,
@@ -90,7 +90,7 @@ const HireMe = () => {
       {
         y: 0,
         opacity: 1,
-        duration: 1.5,
+        duration: 1,
         ease: "power2.out",
         stagger: 0.09,
         scrollTrigger: {
@@ -124,7 +124,7 @@ const HireMe = () => {
       {
         y: 0,
         opacity: 1,
-        duration: 1.5,
+        duration: 1,
         ease: "power2.out",
         stagger: 0.09,
         scrollTrigger: {
