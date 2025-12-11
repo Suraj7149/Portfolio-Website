@@ -9,7 +9,7 @@
 }
 
 .display{
-    margin-top: 160px;
+    margin-top: 60px;
     height: 530px;
     width: 100%;
     display: flex;
@@ -132,12 +132,12 @@
     align-items: center;
     position: relative;
     flex-direction: column;
-    
     height: 100%;
     width: 100%;
     margin: 0 0 0 0%;
     border-radius: 50px;
-    overflow: hidden;    
+    overflow: hidden;   
+    z-index: 1; 
 }
 
 .service_vid_1, .service_vid_2{
@@ -145,6 +145,20 @@
     width: 100%;
     object-fit: cover;
     position: absolute;
+}
+
+.content_box::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.15),
+    rgba(0, 0, 0, 0.6)
+  );
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  pointer-events: none;
 }
 
 
@@ -157,5 +171,6 @@
     font-weight: 500;
     font-size: 120%;
     color: var(--primary-bg-color);
+    z-index: 4;
 }
 

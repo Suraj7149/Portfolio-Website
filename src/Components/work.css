@@ -3,50 +3,34 @@
     width: 100vw;
     display: flex;
     flex-direction: column;
-    align-items: end;
+    align-items: start;
     position: relative;
-    margin: 0 0 160px 0;
+    margin: 100px 0 0 0;
 }
 
-.heading3{
+.work_section_heading{
     display: flex;
     align-items: center;
     text-align: center;
     justify-content: center;
     height: 10%;
     width: 10%;
-    margin-right: 2%;
+    margin-left: 2.2%;
     margin-bottom: -1%;
     gap: 5%;
 }
 
-.circle3{
-    position: relative;
-    height: 12%;
-    width: 5.2%;
-    border-radius: 50%;
-    border: 2px solid black;
-    position: relative;
-}
-
-.circle3::after {
-  content: "";
-  width: 50%;
-  height: 50%;
-  background: black;
-  border-radius: 50%;
-  position: absolute;
-  top: 50%;
-  left: 49%;
-  transform: translate(-50%, -50%);
+.work_section_heading img{
+    height: 12px;
+    width: 12px;
 }
 
 .work_arrows{
     height: 80px;
     width: 192px;
     position: absolute;
-    top: 20%;
-    left: 4%;
+    top: 15%;
+    right: 4.4%;
     display: flex;
     justify-content: space-between;
 
@@ -58,6 +42,7 @@
     margin-right: 4%;
     font-weight: 500;
     font-size: 350%;
+    margin: 3% 0 0 4%;
 
 }
 
@@ -65,7 +50,7 @@
     text-align: right;
     font-weight: 400;
     font-size: 110%;
-    margin: -1% 4% 3% 0;
+    margin: 1.2% 0% 4.4% 4%;
 
 }
 
@@ -98,20 +83,86 @@
     min-width: 25%;
     margin-left: 3%;
     border-radius: 40px;
+    overflow: hidden;
+    cursor: pointer;
+    z-index: 1;
+    /* transition: ease-in 0.5s; */
+    transition: transform 0.35s ease-in-out, box-shadow 0.35s ease;
+
 }
 
+
 .card img{
-    height: 80px;
-    width: 80px;
-    position: absolute;
-    top: 6.5%;
-    right: 6.5%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    
+}
+
+.card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.15),
+    rgba(0, 0, 0, 0.6)
+  );
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  pointer-events: none;
+}
+
+.card:hover {
+  transform: scale(1.02);
+  box-shadow: 
+    0 10px 25px rgba(0, 0, 0, 0.25),
+    0 5px 10px rgba(0, 0, 0, 0.12);
+}
+
+.card:hover:after{
+    background: none;
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
 }
 
 .card label{
     position: absolute;
-    font-weight: 400;
-    font-size: 32px;
-    left: 6.5%;
+    /* font-weight: 400; */
+    font-size: 34px;
+    left: 7.7%;
     bottom: 6.5%;
+    z-index: 4;
+    
+}
+
+.dilli{
+    color: antiquewhite;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+.Zentry{
+    color: white;
+    font-weight: 900;
+    letter-spacing: 4px;
+}
+
+.Mojito{
+    color: darkgray;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+.Portfolio{
+    color: var(--secondary-bg-color);
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+.showcase{
+    color: white;
+    font-weight: 700;
+    letter-spacing: 2px;
 }

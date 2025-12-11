@@ -75,6 +75,7 @@
 
 .about_me_heading{
     position: relative;
+    text-align: center;
 }
 
 .heading2{
@@ -99,6 +100,7 @@
 
 .about_me_desc{
     position: relative;
+    text-align: center;
 }
 
 
