@@ -67,17 +67,15 @@
     flex-direction: column;
     text-align: end;
     margin: 48px -67% 0 0;
-    gap: 22px;
+    gap: 18px;
     color: var(--primary-bg-color);
 }
 
 .outro_info h3{
     font-weight: 400;
-    font-size: 20px;
+    font-size: 16px;
 }
-.email{
-    font-size: 18px;
-}
+
 
 .outro_icon{
     display: flex;
@@ -90,6 +88,9 @@
     height: 30px;
     width: 30px;
     margin-left: 20px;
+}
+.email{
+    font-size: 20px;
 }
 
 .hire_me_card,

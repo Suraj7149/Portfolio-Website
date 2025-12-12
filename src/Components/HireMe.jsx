@@ -46,14 +46,14 @@ const HireMe = () => {
     }
   );
 
-    gsap.fromTo(split_hm.chars,{
+    gsap.fromTo(split_hm.words,{
         y: 30,
         opacity: 0,
       },
       {
         y: 0,
         opacity: 1,
-        duration: 1,
+        duration: 1.5,
         ease: "power2.out",
         stagger: 0.06,
         scrollTrigger: {
@@ -71,7 +71,7 @@ const HireMe = () => {
       {
         y: 0,
         opacity: 1,
-        duration: 2,
+        duration: 1.3,
         ease: "power2.out",
         stagger: 0.09,
         // delay: 2,
@@ -92,7 +92,7 @@ const HireMe = () => {
         opacity: 1,
         duration: 1,
         ease: "power2.out",
-        stagger: 0.09,
+        stagger: 0.03,
         scrollTrigger: {
           trigger: ".hire_me_card",
           start: "top 15%",
@@ -126,7 +126,7 @@ const HireMe = () => {
         opacity: 1,
         duration: 1,
         ease: "power2.out",
-        stagger: 0.09,
+        stagger: 0.03,
         scrollTrigger: {
           trigger: ".hire_me_card",
           start: "top 5%",
@@ -141,35 +141,6 @@ const HireMe = () => {
     return () => split_hm.revert();
 
    });
-
-  // useEffect(() => {
-  //   const split = new SplitText(".hm_desc", {
-  //     type: "lines, words, chars",
-  //     mask: "lines"
-  //   });
-    
-  //   gsap.fromTo(split.words,{
-  //     y: 100,
-  //     opacity: 0,
-  //   },
-  //   {
-  //     y: 0,
-  //     opacity: 1,
-  //     duration: 1.5,
-  //     ease: "power2.out",
-  //     stagger: 0.09,
-  //     scrollTrigger: {
-  //       trigger: ".hire_me_card",
-  //       start: "top center",
-  //       toggleActions: "play reset play reset",
-  //     }
-  //   }
-  // );
-
-  //   return () => split.revert();
-  // }, []);
-
-
 
 
   return (

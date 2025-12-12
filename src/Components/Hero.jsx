@@ -14,6 +14,10 @@ gsap.registerPlugin(ScrollTrigger);
 const Hero = () => {
   const [selectedItem, setSelectedItem] = useState(1);
 
+  useGSAP(() => {
+    gsap.set(".Explore_more", {opacity: 0,});
+  })
+
   // GSAP Animation for Navbar Indicator
   useGSAP(() => {
     gsap.to(".activated", {
@@ -138,7 +142,7 @@ const Hero = () => {
     }, 
 
     { 
-      width: "40%",
+      width: "42%",
       duration: 2.5, 
       // x: 0,
       opacity: 1,
@@ -169,22 +173,7 @@ const Hero = () => {
     
   }, []);
   
-  
-//   useEffect(() => {
-//   gsap.to(".video", {
-//     width: "100%",
-//     x: 0,
-//     duration: 2,
-//     ease: "power2.inOut",
 
-//     scrollTrigger: {
-//       trigger: document.documentElement, // listens to page scroll
-//       start: "0 top",                  // start at 100px scroll
-//       toggleActions: "play none none reverse",
-//       // markers: true,
-//     }
-//   });
-// }, []);
     
   return (
     <div className='hero'>
@@ -194,18 +183,19 @@ const Hero = () => {
                 <a href="">label</a>
                 <ul>
                     <span className='activated'><img src={circle} alt="" /></span>
-                    <li className='item' onClick={() => handleItemClick(1)}>Home</li>
-                    <li className='item' onClick={() => handleItemClick(2)}>About</li>
-                    <li className='item' onClick={() => handleItemClick(3)}>Service</li>
-                    <li className='item item4' onClick={() => handleItemClick(4)}>Work</li>
+                    <li className='item home' onClick={() => handleItemClick(1)}>Home</li>
+                    <li className='item about' onClick={() => handleItemClick(2)}>About</li>
+                    <li className='item service' onClick={() => handleItemClick(3)}>Service</li>
+                    <li className='item work' onClick={() => handleItemClick(4)}>Work</li>
                 </ul>
         </nav>
 
         <div className='discription'>
             <div className="desc_text">
                 <h1 className='hero_heading'>
-                    Bright, Bold, and <br />
-                    Purposeful Web Design
+                    Building Bright <br />
+                    Modern Web <br />
+                    Experiences
                 </h1>
                 
                 <h3 className='hero_desc'>Thoughtfully crafted websites and interfaces that feel smooth, <br />
@@ -221,7 +211,7 @@ const Hero = () => {
                 </h3>
         </div>
         </div>      
-            
+ 
       </div>
 
       <div className="video"> 
