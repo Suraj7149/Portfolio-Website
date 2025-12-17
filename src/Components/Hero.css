@@ -7,6 +7,7 @@
     --linear-gradient: linear-gradient(98deg,rgba(254, 179, 50, 1) 0%, rgba(255, 191, 105, 1) 100%);
     --overlay-linear-gradient: linear-gradient(98deg,rgba(255, 191, 105, 1) 0%, rgba(254, 179, 50, 1) 100%);
 }
+
 .hero{
   height: 100vh;
   width: 100vw;
