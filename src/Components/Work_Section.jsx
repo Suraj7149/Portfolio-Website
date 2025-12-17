@@ -42,13 +42,11 @@ const Work = () => {
     };
 
     const speedUp = () => {
-
         gsap.to(tl.current, {
             timeScale: 1,
             duration: 0.4,
             ease: "power2.out",
         });
-        
     };
     
   return (
