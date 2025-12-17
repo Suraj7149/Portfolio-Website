@@ -66,11 +66,14 @@ const Work = () => {
         </div>
 
         <div className="card_display">
+
             <div 
+
                 ref={cardHolder}
                 className="cards_holder"
                 onMouseEnter={slowDown}
                 onMouseLeave={speedUp}
+
             >
                 <div className="card dilli" onClick={() => {handleClick("https://htmlcssrestaurantdemo.netlify.app/")}}>
                 <img src={Dilli_restaurant} alt="" />
@@ -153,6 +156,7 @@ const Work = () => {
                 </div> 
 
             </div>
+            
         </div>
       
     </div>
