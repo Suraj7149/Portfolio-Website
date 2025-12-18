@@ -23,7 +23,7 @@ const Work = () => {
     }
 
     useEffect(()=>{
-        tl.current =gsap.timeline({repeat: -1})
+        tl.current = gsap.timeline({repeat: -1})
         .to(cardHolder.current, {
             x: "-140%",
             duration: 12,
@@ -48,6 +48,36 @@ const Work = () => {
             ease: "power2.out",
         });
     };
+
+    const shiftleft = (e) => {
+        gsap.to(tl.current, {
+            timeScale: 4,  
+            ease: "power2.out",
+        });
+        gsap.to(tl.current, {
+            timeScale: 1,  
+            ease: "power2.out",
+            delay: 0.5,
+        });
+
+        // console.log("left button clicked.");
+    };
+
+    const shiftright = (e) => {
+        gsap.to(tl.current, {
+            timeScale: -4,  
+            ease: "power2.out",
+        });
+        gsap.to(tl.current, {
+            timeScale: 1,  
+            ease: "power2.out",
+            delay: 0.6,
+        });
+
+        // console.log("right button clicked.");
+    };
+
+
     
   return (
     <div className='work_section'>
@@ -61,8 +91,16 @@ const Work = () => {
         <h2>A curated selection of websites and interfaces I’ve built.</h2>
 
         <div className="work_arrows">
-            <img src={image2} alt="" />
-            <img src={image1} alt="" />
+            <img 
+            src={image2} 
+            alt="" 
+            onClick={(e) => {shiftleft(e)}}
+            />
+            <img 
+            src={image1} 
+            onClick={(e) => {shiftright(e)}}
+            alt="" 
+            />
         </div>
 
         <div className="card_display">
