@@ -52,7 +52,7 @@ const New_About = () => {
       }
     });
     // tl.to(".tobepinned", { height: "100vh" })
-    tl2.from(".heading", { y: 30, opacity: 0, stagger: 0.06, duration: 1, ease: "power2.out", })
+    tl2.from(".heading", { y: 30, opacity: 0, stagger: 0, duration: 0.3, ease: "power2.out", })
     tl.from(heading1.words, { y: 30, opacity: 0, stagger: 0.06, duration: 1, ease: "power2.out", })
     tl.to(heading1.words, { y: 0, opacity: 1, stagger: 0.06, duration: 1, ease: "power2.out", })
     tl.from(split.words, { y: 30, opacity: 0, stagger: 0.06, duration: 1, ease: "power2.out", })

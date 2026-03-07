@@ -1,7 +1,7 @@
 
 
 .about_me{
-    height: 100vh;
+    height: auto;
     width: 100vw;
     position: relative;
     display: flex;
@@ -22,7 +22,7 @@
 .tobepinned{
     height: 700px;
     width: 100%;
-    padding-top: 100px;
+    padding-top: 160px;
     background: white;
     display: flex;
     flex-direction: column;
