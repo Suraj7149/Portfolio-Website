@@ -13,6 +13,32 @@ gsap.registerPlugin(SplitText);
 gsap.registerPlugin(ScrollTrigger);
 
 const Hero = () => {
+
+  function useWindowSize() {
+      const [windowSize, setWindowSize] = useState({
+        width: 300,
+        height: undefined,
+      });
+
+      useEffect(() => {
+        function handleResize() {
+          setWindowSize({
+            width: window.innerWidth, //
+            height: window.innerHeight, //
+          });
+        }
+        window.addEventListener("resize", handleResize);
+        handleResize();
+        return () => window.removeEventListener("resize", handleResize);
+      }, []);
+
+      return windowSize;
+  }
+
+  const { width } = useWindowSize();
+  const isMobile = width < 1200 ? true : false;
+  console.log(width, isMobile);
+
   const [selectedItem, setSelectedItem] = useState(1);
 
   useGSAP(() => {
@@ -135,23 +161,34 @@ const Hero = () => {
 
   // GSAP Animation for Explore More
   useEffect(() => {
-    gsap.fromTo(".Explore_more",
-      {
-        opacity: 0,
-        width: "4%",
-        // x: -400,
-      },
+  const mm = gsap.matchMedia();
 
+  mm.add("(max-width: 1200px)", () => {
+    gsap.fromTo(".Explore_more",
+      { opacity: 0, width: "4%" },
+      {
+        width: "60%",
+        duration: 2.5,
+        opacity: 1,
+        ease: "power2.out",
+      }
+    );
+  });
+
+  mm.add("(min-width: 1201px)", () => {
+    gsap.fromTo(".Explore_more",
+      { opacity: 0, width: "4%" },
       {
         width: "42%",
         duration: 2.5,
-        // x: 0,
         opacity: 1,
         ease: "power2.out",
+      }
+    );
+  });
 
-      });
-
-  }, []);
+  return () => mm.revert();
+}, []);
 
   // GSAP Animation for navbar
   useEffect(() => {
@@ -201,6 +238,8 @@ const Hero = () => {
               responsive, and bring clarity to your online presence <br />
               Just like a fresh sunrise for your brand.<br />
             </h3>
+
+              
           </div>
 
           <div className="Explore_more">
